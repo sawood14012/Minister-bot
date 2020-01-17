@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "minister-lgkdat",
+  "private_key_id": "66fd4df615718aa3c425f78cb6c6744fd933390f",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC0FTrRz+dzevWs\nS+K8Ser1NdHWkE4582SrgFcsME5zYOuxVKc7b9WSTBMLso6zmbqF8CzTtrWbdtcX\n4AI4B5y98PSRRx75amLU0MUE0udSY9xQ7vI8SRKQciZ0HMJFQKY8/Zby5kmsSlHs\nShycr3C++vigmAhSouQ5EP3y7EevfgQnWdKgh+zyL70JOc0O4DnbmghqPI7DXvXD\nSyY96QnBICwIOQeKMRbbxb0iCiTwuOZn74elHo+8BtkzIso3owYG2ELLmKEfM7R1\n5j6y32l4tT2QPKO/cgffk2zuocXdSEqr9YopVeUEr9KeOp7ACFf8/yDeDJVe9hv8\nwMVeS6pLAgMBAAECggEANl3ga55aMFVzXOhuE803F39/kcjwLPOrtVEiQC93R8L/\ndQJrGHkbX7cC2vm1tkgXdT88sVAMRNqcdlNFKDg4HGnl1ARGOCNjof9DM8EeYBPQ\n3Eg/Lm8bISutK0nRZsntRiWDEGLw5Aht8imvuKgIoEexjv5HKPePciEMoe2ueK7O\n9TEXtgkONS9WcxvWAgekPKHlo+F4h+8UrENpi9C4lhBDFyQnqfQduBVPLjpEzG3T\nDysCPkQVEgpnD+7XJFNZAEgPNZkUX2+SmX46w67umuZnCVlPMZap0qjMCQZx8OpC\nJeBmlGEQDfvyjA6E0fNvzxULyXH5t8rL45ScGL2CBQKBgQDtOQKmzWEMa/rspFKk\nMiS7zFzt5f8FP6B0UtzOH9TSnACdiN68x0FXq4/KHX9Llas+7qJZ/R1d0pC/xIjV\nQV8XtisvI4twE8SPrMBjGLwbDP46S83XAW3fS87CHGmWskcOT0Hl9WShW62e8B8W\nEOuhAAR+Tx4EoPgzY/Ea2yrZnwKBgQDCVlxwQ0Txj73Yx3eAxRxZPRyB3it7dTgN\nED49hn9yXLDWbOLKxresqE0yZC+4kPe0J2eYD6cmVIYE6CSZ7dr0V8qnqTZX/Xr7\ncg2CnEHgfRrAiEkkFIvNoF55b6pFs+GobMpbIlFoG6wELozDPss6w0l1rIGrrV2G\nE4XB7UbH1QKBgH89JP7zCirvgBeNzAXmH23bn7y6sJ7QEfBSwbyNtkmBA5N75ny7\nI4EytF1klPKlxMRsmwhJi4bXemxhrkM0XR0KyP7vwcrLz5KAxnBgxAR+Y55BKpc4\nXQZ4Ut4q/zelSBeUy3Pcu60Qz3+ArCvZx4kDyWU2apNxA7AM2zXceI9hAoGBAJc4\nxoOhBOQH2031oTs1pqKWWDmCXUmbZDteGWCc6U1fbUfdwPjTexfCexesOCohvG6W\nfxknjQTZntPwpJKXMNsT+aFPnfcISwugq3yoBOcf0pJhOrD1v/gJQ5qxVskYeY8q\n4Kfb44bkiY1Tf7tqgJBAaEhGLT0fEXiEdn/6GCrlAoGBAKCRRqM8yZfKX29gwb20\nnSjn1ZrBPOFRMod3a6QYdKri5TIiKbACwlHPW5HdmN7PaAQiufHvE1Z5315s6g+N\nWwZhZJykNvZg0bCylV+Ut3nq8BIv21X4IOqfteI2IWm0dDlB6YUANs92T20IKIGY\nFwKudhLz9mdivb9v6jPNZyUn\n-----END PRIVATE KEY-----\n",
+  "client_email": "dialogflow-wahqol@minister-lgkdat.iam.gserviceaccount.com",
+  "client_id": "113353149823632773527",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dialogflow-wahqol%40minister-lgkdat.iam.gserviceaccount.com"
+}
