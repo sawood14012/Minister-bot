@@ -6,11 +6,22 @@ const Db = require('../models/Db')
 
 // GET all Resultado
 router.get('/', (req, res) => {
-    // insert_resultado_record();
-    Db.Resultado.find().exec((err, data) => {
+    //insert_resultado_record();
+   Db.Resultados.find().exec((err, data) => {
         if (err) {
+            const error = {
+              status: false,
+              message: err.message
+            };
+            res.send(error);
         } else {
-            res.send(data);
+           
+            const result = {
+                status: true,
+                data: data,
+
+            }
+             res.send(result);
         }
     });
 })
@@ -22,13 +33,13 @@ var row1 = new Resultado({
     Title: 'title1',
     Description: 'desc',
     Image: 'img1',
-    Timestamps: new Date().getTime()
+    //Timestamps: new Date().getTime()
 });
 
 // save model to database
 row1.save(function (err, row1) {
     if (err) return console.error(err);
-    console.log(row1.Name + " saved to Resultado collection.");
+    console.log(row1.ID + " saved to Resultado collection.");
 });
 } 
 

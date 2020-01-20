@@ -11,7 +11,7 @@ const uuid = require('uuid');
  * Send a query to the dialogflow agent, and return the query result.
  * @param {string} projectId The project to be used
  */
-async function runSample(projectId = 'minister-lgkdat') {
+async function runSample(projectId = 'minister-lgkdat',) {
     // A unique identifier for the given session
     const sessionId = uuid.v4();
 
@@ -23,15 +23,15 @@ async function runSample(projectId = 'minister-lgkdat') {
 
     // The text query request.
     const request = {
-        session: sessionPath,
-        queryInput: {
-            text: {
-                // The query to send to the dialogflow agent
-                text: 'hello minister',
-                // The language used by the client (en-US)
-                languageCode: 'en-US',
-            },
-        },
+      session: sessionPath,
+      queryInput: {
+        text: {
+          // The query to send to the dialogflow agent
+          text: "Get misters list",
+          // The language used by the client (en-US)
+          languageCode: "en-US"
+        }
+      }
     };
 
     // Send request and log result
@@ -45,36 +45,61 @@ async function runSample(projectId = 'minister-lgkdat') {
     } else {
         console.log(`  No intent matched.`);
     }
+    return result.queryText;
 }
 
 
 
 // GET all ministers
 router.get('/', (req, res) => {
-    var myFunc = runSample();
+   // insert_minister_record();
+   // var myFunc = runSample();
+     Db.Minister.find({
+       Status: "Active"
+     }).exec((err, data) => {
+       if (err) {
+           const error = {
+               status: false,
+               message: err.message
+           }
+           res.send(error);
 
-    myFunc.then(function () {
+       } else {
+           const result = {
+               status: true,
+               data: data,
+
+           }
+         res.send(result);
+       }
+     });
+    
+
+    /*myFunc.then(response=> {
         console.log('Promise resolved');
+        console.log(response);
+        //res.send(response);
+        if (response === "Get misters list") {
+         
+        }
+       
     }).catch(function () {
         console.log('Promise rejected');
-    });
-    // Db.Minister.find({
-    //     Status: 'Active'
-    // }).exec((err, data) => {
-    //     if (err) {} else {
-    //         res.send(data);
-    //     }
-    // });
+    });*/
+    
+     
+      
 })
 
 function insert_minister_record() {
     //setting
     var row1 = new Minister({
-        Name: 'Minister 1',
+        Name: 'Minister 2',
         Image: 'Hello',
         ID: 25,
         Description: 'desc',
-        Order: 5
+        Order: 5,
+        Status: 'Active'
     });
 
     // save model to database

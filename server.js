@@ -16,6 +16,7 @@ mongoose.Promise = Promise
 
 app.use(cors())
 app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // app.post('/api/saveDealerInfo', (req, res) => {
 //     // store this on database
