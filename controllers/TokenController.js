@@ -58,6 +58,7 @@ router.post('/',(req,res)=>{
 
 })
 // GET Tokerns
+//
 
 //router.get('/', (req, res) => {
     // Db.Minister.find({Status: 'Active'}).exec((err, data) => {

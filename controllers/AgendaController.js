@@ -8,7 +8,7 @@ const Db = require('../models/Db')
 
 // GET all Agenda
 router.get('/', (req, res) => {
-    // insert_agenda_record();
+     //insert_agenda_record();
     Db.Agenda.find().exec((err, data) => {
         if (err) {
            const error = {
