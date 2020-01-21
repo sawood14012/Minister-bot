@@ -3,6 +3,7 @@ const ResultadosSchema = mongoose.Schema({
     ID: Number,
     Title: String,
     Description: String,
+    avatar:String,
     Image: String},
     {timestamps: true}
 );

@@ -33,6 +33,7 @@ var row1 = new Resultado({
     Title: 'title1',
     Description: 'desc',
     Image: 'img1',
+    avatar:"hello"
     //Timestamps: new Date().getTime()
 });
 

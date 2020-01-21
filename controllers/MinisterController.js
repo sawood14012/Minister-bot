@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const router = express.Router();
 const Minister = mongoose.model('Minister')
 const Db = require('../models/Db')
+const multer = require("multer");
 
 const dialogflow = require('dialogflow');
 const uuid = require('uuid');
@@ -90,6 +91,9 @@ router.get('/', (req, res) => {
      
       
 })
+
+
+
 
 function insert_minister_record() {
     //setting
