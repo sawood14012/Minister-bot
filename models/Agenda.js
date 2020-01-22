@@ -2,8 +2,10 @@ const mongoose = require('mongoose');
 
 const AgendasSchema = mongoose.Schema({
     ID: Number,
-    Title: String,
-    Description: String,
+    Event: String,
+    Local: String,
+    Hour_Scheduled: Date,
+    Participants : Array,
     Image: String},
     {timestamps: true}
     

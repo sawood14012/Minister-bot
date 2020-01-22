@@ -37,12 +37,21 @@ router.post("/api/add", (req, res) => {
       }
       console.log("success");
       console.log(data.Location);
+      var parti = {} 
+      if(req.body.participants){
+          parti = req.body.participants;
+      }
+      else{
+        parti = {}
+      }
+      console.log(req.body.hoursch);
       insert_agenda_record(
         req.body.id,
-        req.body.title,
-        req.body.desc,
-        data.Location,
-        
+        req.body.event,
+        req.body.local,
+        parti,
+        req.body.hoursch,
+        data.Location
       )
         .then(resp => {
           const result = {
@@ -86,12 +95,14 @@ router.get('/', (req, res) => {
     });
 })
 
-async function insert_agenda_record(id,title,desc,imageUrl) {
+async function insert_agenda_record(id,event,local,participants,hoursch,imageUrl) {
 //setting
 var row1 = new Agenda({
     ID: id,
-    Title: title,
-    Description: desc,
+    Event: event,
+    Local: local,
+    Hour_Scheduled: hoursch,
+    Participants: participants,
     Image: imageUrl,
 });
 
