@@ -12,23 +12,23 @@ const uuid = require('uuid');
  * Send a query to the dialogflow agent, and return the query result.
  * @param {string} projectId The project to be used
  */
-async function runSample(projectId = 'minister-lgkdat',) {
+async function runSample(sessionToken, message) {
     // A unique identifier for the given session
-    const sessionId = uuid.v4();
-
+    //const sessionId = uuid.v4();
+    projectId = 'minister-lgkdat';
     // Create a new session
     const sessionClient = new dialogflow.SessionsClient({
         keyFilename: "./Minister-66fd4df61571.json"
     });
-    const sessionPath = sessionClient.sessionPath(projectId, sessionId);
+    //const sessionPath = sessionClient.sessionPath(projectId, sessionId);
 
     // The text query request.
     const request = {
-      session: sessionPath,
+      session: sessionToken,
       queryInput: {
         text: {
           // The query to send to the dialogflow agent
-          text: "Get misters list",
+          text: message,
           // The language used by the client (en-US)
           languageCode: "en-US"
         }
@@ -46,10 +46,31 @@ async function runSample(projectId = 'minister-lgkdat',) {
     } else {
         console.log(`  No intent matched.`);
     }
-    return result.queryText;
+    return result;
 }
 
 
+router.post('/chat',(req,res)=>{
+    ministerId = req.body.id;
+    sessionToken = req.body.token;
+    QueryInput = req.body.message;
+    console.log("here now");
+
+    resultResponse = runSample(sessionToken, QueryInput).then(resp =>{
+       res.send(resp);
+    }).catch(err=>{
+        const error = {
+            status:false,
+            error: err.message
+        }
+        res.send(error)
+    })
+
+   
+
+
+    
+})
 
 // GET all ministers
 router.get('/', (req, res) => {
