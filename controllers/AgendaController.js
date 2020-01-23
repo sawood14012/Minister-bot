@@ -5,6 +5,7 @@ const Agenda = mongoose.model('Agenda')
 const Db = require('../models/Db')
 const AWS = require("aws-sdk");
 const Busboy = require("busboy");
+const Mime = require('mime/Mime');
 
 
 router.post("/api/add", (req, res) => {
@@ -19,14 +20,18 @@ router.post("/api/add", (req, res) => {
       secretAccessKey: "zZ8wVKr/M7iKW9402GYvbviUw5gVSjWS5xa1BFFm",
       Bucket: "hawkeyeeee11"
     });
-
+    let extn = file.name.split(".").pop();
+    let contentType = "application/octet-stream";
+    if (extn == "png" || extn == "jpg" || extn == "gif" || extn == "jpeg") {
+      contentType = "image/" + extn;
+    }
+      
+   // console.log(extn)
     var params = {
       Bucket: "hawkeyeeee11",
       Key: file.name,
       Body: file.data,
-      Metadata: {
-        "Content-Type": "image/jpeg"
-      }
+      ContentType: contentType
     };
 
     s3bucket.upload(params, function(err, data) {

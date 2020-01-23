@@ -22,18 +22,37 @@ router.post('/api/add',(req,res)=>{
         Bucket: "hawkeyeeee11"
       });
 
+      let extn = file.name.split(".").pop();
+      let contentType = "application/octet-stream";
+      if (extn == "png" || extn == "jpg" || extn == "gif" || extn == "jpeg") {
+        contentType = "image/" + extn;
+      }
+
+      // console.log(extn)
       var params = {
         Bucket: "hawkeyeeee11",
         Key: file.name,
-        Body: file.data
+        Body: file.data,
+        ContentType: contentType
       };
+
+      let extn1 = avatar.name.split(".").pop();
+      let contentType1 = "application/octet-stream";
+      if (
+        extn1 == "png" ||
+        extn1 == "jpg" ||
+        extn1 == "gif" ||
+        extn1 == "jpeg"
+      ) {
+        contentType1 = "image/" + extn1;
+      }
+
+      
       var params1 = {
         Bucket: "hawkeyeeee11",
         Key: avatar.name,
         Body: avatar.data,
-        Metadata: {
-          "Content-Type": "image/jpeg"
-        }
+        ContentType: contentType1
       };
 
       s3bucket.upload(params, function(err, data) {

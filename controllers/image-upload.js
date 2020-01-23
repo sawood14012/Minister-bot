@@ -18,13 +18,18 @@ router.post("/api/upload", function(req, res) {
     Bucket: "hawkeyeeee11"
   });
   
+    let extn = file.name.split(".").pop();
+    let contentType = "application/octet-stream";
+    if (extn == "png" || extn == "jpg" || extn == "gif" || extn == "jpeg") {
+      contentType = "image/" + extn;
+    }
+
+    // console.log(extn)
     var params = {
       Bucket: "hawkeyeeee11",
       Key: file.name,
       Body: file.data,
-      Metadata: {
-        "Content-Type": "image/jpeg"
-      }
+      ContentType: contentType
     };
     
      s3bucket.upload(params, function(err, data) {
