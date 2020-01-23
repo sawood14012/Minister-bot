@@ -129,7 +129,10 @@ router.post('/chat',(req,res)=>{
     console.log("here now");
 
     resultResponse = runSample(sessionToken, QueryInput).then(resp =>{
-       res.send(resp);
+       res.send({
+         status: true,
+         ResultText: resp["fulfillmentText"]
+       });
     }).catch(err=>{
         const error = {
             status:false,
