@@ -4,7 +4,7 @@ const AgendasSchema = mongoose.Schema({
     ID: Number,
     Event: String,
     Local: String,
-    Hour_Scheduled: Date,
+    Hour_Scheduled: String,
     Participants : Array,
     Image: String},
     {timestamps: true}
