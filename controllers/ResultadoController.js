@@ -30,7 +30,10 @@ router.post('/api/add',(req,res)=>{
       var params1 = {
         Bucket: "hawkeyeeee11",
         Key: avatar.name,
-        Body: avatar.data
+        Body: avatar.data,
+        Metadata: {
+          "Content-Type": "image/jpeg"
+        }
       };
 
       s3bucket.upload(params, function(err, data) {
